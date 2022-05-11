@@ -1,3 +1,14 @@
+<cfset myText="the quick brown fox jumps over the lazy dog">
+    <cfif structKeyExists(form,'Submit')>
+        <cfset keyword=form.search>
+            <cfset data=createObject("component","components.task1")>
+                <cfset wordFoundPos=data.displayFunc(keyword)>
+                    <div class="res1">
+                        <cfoutput>
+                            <h4>#wordFoundPos#, #keyword# </h4>Find in - #myText#
+                        </cfoutput>
+                    </div>
+    </cfif>
 <html>
     <head>
         <link rel="stylesheet" href="css/style.css">
@@ -20,14 +31,3 @@
         </section>
     </body>
 </html>
-<cfset myText="the quick brown fox jumps over the lazy dog">
-    <cfif structKeyExists(form,'Submit')>
-        <cfset keyword=form.search>
-            <cfset data=createObject("component","components.task1")>
-                <cfset wordFoundPos=data.displayFunc(keyword)>
-                    <div class="res1">
-                        <cfoutput>
-                            <h4>#wordFoundPos#, #keyword# </h4>Find in - #myText#
-                        </cfoutput>
-                    </div>
-    </cfif>
